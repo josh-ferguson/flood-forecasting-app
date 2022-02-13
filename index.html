@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<meta charset="utf-8" >
+<title>Flood Prediction Map</title>
+<link href="mystyle.css" rel="stylesheet" title="Default">
+
+<header>
+  <h1>Flood Prediction Map</h1>
+</header>
+
+
+<main>
+  <p id="instructions"> Enter the last 5 days daily rainfall totals in order to provide an indication of the catchment ground conditions, then the last 12 hours of hourly rainfall to define the likely flooding that may occur.  Once submitted, a map of the potential flooding that could occur is displayed.</p>
+
+  <section id="section1">
+    <form id="frm1">
+      Please select catchment: <select id="catchments">
+        <option value="Les_Cayes" name="Les_Cayes">Les_Cayes</option>
+        <option value="Cabaret" name="Cabaret">Cabaret</option>
+        <option value="Gonaive" name="Gonaive">Gonaive</option>
+        <option value="Fort_Liberte" name="Fort_Liberte">Fort_Liberte</option>
+        <option value="Kampala" name="Kampala">Kampala</option>
+      </select>
+    </form>
+
+  </section>
+
+  <section id="section6">
+
+    <form class="reseting" id="frm6">
+      <button type="button" onclick="resetsss()">Clear all</button>
+
+    </form>
+
+
+  </section>
+
+  <section id="section2">
+
+    <form class="forms" id="frm2">
+      Please enter rainfall(mm) from last 5 days(Press <b>"Tab"</b> for next entry):<br><br>
+      5 days ago: <input type="number" id="5days" min="0" max="500"><br>
+      4 days ago: <input type="number" id="4days" min="0" max="500"><br>
+      3 days ago: <input type="number" id="3days" min="0" max="500"><br>
+      2 days ago: <input type="number" id="2days" min="0" max="500"><br>
+      1 days ago: <input type="number" id="1days" min="0" max="500"><br><br>
+      <button type="button" onclick="anticedentCondition()">Click here for anticedent conditions</button><br><br>
+      Anticedent condition: <input type="text" id="antiCondition" readonly value="">
+
+    </form>
+
+  </section>
+
+  <section id="section3">
+
+    <form class="forms" id="frm3">
+      Please enter rainfall(mm) from last 12 hours(Press <b>"Tab"</b> for next entry):<br><br>
+      12 hours ago: <input type="number" id="12hours"><br>
+      11 hours ago: <input type="number" id="11hours"><br>
+      10 hours ago: <input type="number" id="10hours"><br>
+      09 hours ago: <input type="number" id="9hours"><br>
+      08 hours ago: <input type="number" id="8hours"><br>
+      07 hours ago: <input type="number" id="7hours"><br>
+      06 hours ago: <input type="number" id="6hours"><br>
+      05 hours ago: <input type="number" id="5hours"><br>
+      04 hours ago: <input type="number" id="4hours"><br>
+      03 hours ago: <input type="number" id="3hours"><br>
+      02 hours ago: <input type="number" id="2hours"><br>
+      01 hours ago: <input type="number" id="1hours"><br><br>
+      <button type="button" onclick="totalCalc()">Click here for storm event and profile</button><br><br>
+      Total: <input type="text" id="total" readonly value=""><br><br>
+      Storm Event: <input type="text" id="roundedTotal" readonly value="">
+
+
+    </form>
+
+  </section>
+
+  <section id="section4">
+
+    <form class="forms" id="frm4">
+      Storm Profile: <input type="text" id="stormProfile" readonly value=""><br><br>
+      name: <br>
+      <input type="text" id="name" readonly value=""><br><br>
+      <button type="button" onclick="SubmitButtons()">Submit</button>
+
+
+    </form>
+
+  </section>
+
+  <section id="section5">
+
+    <form class="reseting" id="frm5">
+      <button type="button" onclick="resetsss()">Reset</button>
+
+    </form>
+
+
+  </section>
+
+
+</main>
+
+<script>
+
+  document.getElementById("12hours").value = localStorage.getItem("hour12");
+  document.getElementById("11hours").value = localStorage.getItem("hour11");
+  document.getElementById("10hours").value = localStorage.getItem("hour10");
+  document.getElementById("9hours").value = localStorage.getItem("hour9");
+  document.getElementById("8hours").value = localStorage.getItem("hour8");
+  document.getElementById("7hours").value = localStorage.getItem("hour7");
+  document.getElementById("6hours").value = localStorage.getItem("hour6");
+  document.getElementById("5hours").value = localStorage.getItem("hour5");
+  document.getElementById("4hours").value = localStorage.getItem("hour4");
+  document.getElementById("3hours").value = localStorage.getItem("hour3");
+  document.getElementById("2hours").value = localStorage.getItem("hour2");
+  document.getElementById("1hours").value = localStorage.getItem("hour1");
+
+  document.getElementById("5days").value = localStorage.getItem("day5");
+  document.getElementById("4days").value = localStorage.getItem("day4");
+  document.getElementById("3days").value = localStorage.getItem("day3");
+  document.getElementById("2days").value = localStorage.getItem("day2");
+  document.getElementById("1days").value = localStorage.getItem("day1");
+
+
+</script>
+
+<script src="myscripts.js"></script>
+
+<footer>
+
+</footer>
